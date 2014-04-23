@@ -59,6 +59,10 @@ function TlaViewModel() {
 jQuery(document).ready(function() {
     ko.applyBindings(TlaViewModel());
 
+    // TLA input box hacks.
+    // Captures input on textbox and turns it to upper case
+    // before it is revealed to the user. In addition, inputs
+    // which fail a regex (Aa-Zz only!) are replaced with nothing
     $("#AcronymInput").on('input', function(evt) {
         var input = $(this);
         var start = input[0].selectionStart;
